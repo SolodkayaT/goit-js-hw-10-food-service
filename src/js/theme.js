@@ -11,7 +11,12 @@ const refs = {
 };
 
 const curentTheme = localStorage.getItem('theme');
-refs.body.classList.add(curentTheme);
+
+if (curentTheme) {
+  refs.body.classList.add(curentTheme);
+} else {
+  refs.body.classList.add(LIGHT);
+}
 if (curentTheme === DARK) {
   refs.input.checked = true;
 }
